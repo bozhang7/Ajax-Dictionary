@@ -5,6 +5,27 @@
     <title>Dictionary</title>
 </head>
 <body>
+    <select id="term">
+        <option>ajax</option>
+        <option>button</option>
+        <option>load</option>
+        <option>submit</option>
+        <option>update</option>
+    </select>
 
+    <button id="search">Search</button>
+
+    <div id="definition"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        $("#search").on("click", function()
+        {
+            //Get the value of the text box
+            var term = $("#term").val();
+            //Don't need to refresh when loaded file is changed
+            $("#definition").load("definition.php", { term : term });
+        });
+    </script>
 </body>
 </html>
