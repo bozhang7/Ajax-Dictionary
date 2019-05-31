@@ -1,2 +1,4 @@
 <?php
-echo $_POST['term'];
+
+$term = $_POST['term'];
+echo "<Strong>$term</Strong>: definition";
